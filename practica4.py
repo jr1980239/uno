@@ -12,3 +12,4 @@ valor = 15.25
 print(str(valor))
 print (int(valor))
 #####################################################
+print(int(José))  # Error

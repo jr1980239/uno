@@ -33,3 +33,12 @@ print (cadena[6:1:-2]) #-->  substring invertido
 print (cadena[-7:-11:-1])
 print (cadena[:-6:-1])
 print (cadena[-7::-1])
+#####################################################################
+#len para conocer el tamaño del dato o caracteres
+
+print(len(cadena))
+
+print(min("hola@mundo")) #presenta el caracter minimo en este caso es el @
+print(max("hola@mundo")) #presenta el caracter maximo en este caso es la u
+print(max("hola@mundo z")) #presenta el caracter maximo en este caso es la z
+

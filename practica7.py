@@ -42,3 +42,7 @@ print(min("hola@mundo")) #presenta el caracter minimo en este caso es el @
 print(max("hola@mundo")) #presenta el caracter maximo en este caso es la u
 print(max("hola@mundo z")) #presenta el caracter maximo en este caso es la z
 
+
+
+
+

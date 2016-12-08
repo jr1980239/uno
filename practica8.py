@@ -34,6 +34,7 @@ print(data_limpia)
 data_limpia = data_limpia.replace("0", " ").replace("  "," ") # remplazar los valores en las cadenas.
 print(data_limpia)
 
+print(datos.split("\\"))
 
 
 

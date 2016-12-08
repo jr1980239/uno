@@ -7,6 +7,9 @@ print(int (a) + int (b))
 #####################################################
 print(bool(0))
 print(bool(""))
+print(bool(None))
+print(bool([]))
+
 #####################################################
 valor = 15.25
 print(str(valor))

@@ -93,3 +93,7 @@ elif 65 > edad > 19:
     print("Madurez")
 else :
     print("Vejez")
+
+edad = 15
+valor = edad >= 18 and "Mayor de edad" or "Menor de edad"
+print(valor)

@@ -3,7 +3,7 @@ import requests
 import time
 
 api = ApiClient(token='jVYIpUpCxX12EVkSqDFAxWcAopdBf1')
-my_variable = api.get_variable('5848c8d87625422d640ad3e2')
+my_variable = api.get_variable('5852054076254275dcc8ff5c')
 #new_value = my_variable.save_value({'value': 50})
 
 response = requests.get('http://earthquake.usgs.gov/fdsnws/event/1/query?format=text&starttime=2016-04-16&endtime=2016-04-20')

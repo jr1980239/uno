@@ -1,34 +1,36 @@
-from ubidots import ApiClient
-import numpy as np
 import requests
-import time
+import numpy as np
 
-#api = ApiClient(token='jVYIpUpCxX12EVkSqDFAxWcAopdBf1')
-#my_variable = api.get_variable('5852054076254275dcc8ff5c')
-#new_value = my_variable.save_value({'value': 50})
 
 response = requests.get('http://earthquake.usgs.gov/fdsnws/event/1/query?format=text&starttime=2016-04-16&endtime=2016-04-20')
 data = response.text
-#print (data)
 
-q = "ecuador"
 eventos = data.split("\n")
 lista = []
-
 for i in range(len(eventos)):
-    if i > 0:
-       datos = eventos[i].split("|")
-       lista.append(datos)
- #   print(lista)
-
+    if i > 0 and eventos[i]:
+        datos = eventos[i].split("|")
+        if datos[10] == '' or float(datos[10]) <= 0:
+            continue
+        lista.append(datos)
 matrix = np.array(lista)
+
+print(matrix)
 
 magnitudes = matrix[:,10]
 magnitudes = np.array(magnitudes, float)
-#print(magnitudes)
-print("maxima magnitud", np.max(magnitudes))
+
+print("Mayor magnitud", np.max(magnitudes))
 indice_max = np.argmax(magnitudes)
-print("Lugar", matrix[indice_max,12])
-print("minima magnitud", np.min(magnitudes))
+print("Lugar:", matrix[indice_max,12])
+
+
+print("Menor magnitud", np.min(magnitudes))
 indice_min = np.argmin(magnitudes)
-print("Lugar", matrix[indice_min,12])
+print("Lugar:", matrix[indice_min,12])
+
+indice_ord = np.argsort(magnitudes)[::-1]
+matrix_ord_mag = matrix[indice_ord,:]
+
+for registro in matrix_ord_mag:
+    print ("magnitud", registro[10], "\t" ,"\t", "Fecha", registro[1] ,"Lugar", registro[12])

@@ -35,9 +35,11 @@ for k in d:
 a= (1,0)
 if a in d:
     print(d[a])
-"""
+
 k=1
 if k in d:
     print(d[k])
 else:
     print("La clave no existe")
+"""
+

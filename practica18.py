@@ -39,6 +39,7 @@ print(np.transpose(submatriz))
 #matriz2 = np.reshape(matriz, (25,2))
 #print(matriz2)
 ###############################################################
+"""
 matriz = np.random.randint(1, 30, (6,5))
 print(matriz)
 #print (np.sort(matriz, axis=0))
@@ -50,3 +51,18 @@ indices = np.argsort(matriz[:,3], axis=0)
 matriz_ordenada = matriz[indices,:]
 print(matriz_ordenada)
 
+
+matriz = [[1,3,6],
+    [5,7,9],
+    [3,18,0]]
+
+arreglo = np.array(matriz,float)
+print(arreglo)
+
+arreglo = np.array(matriz,str)
+print(arreglo)
+"""
+matriz = np.random.randint(1, 30, (6,5))
+print(matriz)
+matriz[matriz > 15] = -1
+print(matriz)
